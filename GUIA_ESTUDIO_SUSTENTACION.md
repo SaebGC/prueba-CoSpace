@@ -267,3 +267,4 @@ export function LocalDate({ date }: { date: string | Date }) {
 > Implementamos seguridad en dos capas:
 > 1. **Perimetral en Edge (`middleware.ts`)**: Antes de que la página cargue, intercepta cualquier ruta bajo `/admin/:path*`, valida la firma criptográfica del JWT y verifica si `payload.role === 'ADMIN'`. Si no lo es, redirige al `/dashboard`.
 > 2. **En la API (`validateAdminRoute` en `server-auth.ts`)**: Cualquier endpoint que cree espacios o desactive recursos verifica en servidor el rol antes de procesar la petición, respondiendo `403 Forbidden` si el rol no es administrador.
+
